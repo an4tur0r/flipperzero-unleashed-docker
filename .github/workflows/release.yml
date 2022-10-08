@@ -1,0 +1,27 @@
+name: release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install deps
+        run: |
+          apt-get update && apt-get install docker
+
+      - name: Build image
+        env:
+          DOCKER_PUSH_TOKEN: ${{ secrets.DOCKER_PUSH_TOKEN }}
+          DOCKER_TAG: ${{ github.ref_name }}
+        run: |
+          docker login -u an4tur0r -p $DOCKER_PUSH_TOKEN
+          docker build -t . --build-arg REF_TAG=$DOCKER_TAG flipperzero-unleashed:$DOCKER_TAG
+          docker push flipperzero-unleashed:$DOCKER_TAG
