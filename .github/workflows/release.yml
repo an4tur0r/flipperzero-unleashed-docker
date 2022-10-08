@@ -25,4 +25,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: an4tur0r/flipperzero-unleashed:${{ github.ref_name }}
+          tags: |
+            an4tur0r/flipperzero-unleashed:${{ github.ref_name }}, an4tur0r/flipperzero-unleashed:latest
+          build-args: |
+            REF_TAG=${{ github.ref_name }}
