@@ -1,6 +1,6 @@
 FROM amd64/ubuntu:latest
 
-ENV REPO_URL https://github.com/Eng1n33r/flipperzero-firmware.git
+ENV REPO_URL https://github.com/DarkFlippers/unleashed-firmware.git
 ARG REF_TAG
 
 RUN apt-get update && \
