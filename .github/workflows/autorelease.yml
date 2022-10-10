@@ -1,6 +1,7 @@
 name: autorelease
 
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '0 12 * * *'
 
@@ -8,7 +9,8 @@ jobs:
   check_release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout source code
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
