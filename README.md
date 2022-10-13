@@ -1,4 +1,4 @@
-# flipper-firmware-docker
+# flipperzero-unleashed-docker
 
 This is a source code and CI pipeline for [an4tur0r/flipperzero-unleashed](https://hub.docker.com/repository/docker/an4tur0r/flipperzero-unleashed) Docker image, based on [Flipper Zero Unleashed](https://github.com/Eng1n33r/flipperzero-firmware) firmware.
 
